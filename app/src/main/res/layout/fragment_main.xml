@@ -6,15 +6,108 @@
     android:layout_height="match_parent"
     tools:context=".MainFragment">
 
-    <TextView
-        android:id="@+id/textView"
+    <ImageButton
+        android:id="@+id/btn_animals"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="308dp"
-        android:layout_marginBottom="404dp"
-        android:text="TextView"
+        android:layout_marginStart="50dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/animal_icon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.13999999"
+        tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck"
+        android:contentDescription="TODO" />
+
+    <ImageButton
+        android:id="@+id/btn_cars"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="50dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/car_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_animals"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/btn_animals"
+        tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
+
+    <ImageButton
+        android:id="@+id/btn_fashion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/fasion_icon"
+        app:layout_constraintEnd_toEndOf="@+id/btn_animals"
+        app:layout_constraintStart_toStartOf="@+id/btn_animals"
+        app:layout_constraintTop_toBottomOf="@+id/btn_animals"
+        tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
+
+    <ImageButton
+        android:id="@+id/btn_food"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/food_icon"
+        app:layout_constraintEnd_toEndOf="@+id/btn_cars"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/btn_fashion"
+        app:layout_constraintTop_toBottomOf="@+id/btn_cars"
+        tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
+
+    <ImageButton
+        android:id="@+id/btn_scince"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/science_icon"
+        app:layout_constraintEnd_toEndOf="@+id/btn_fashion"
+        app:layout_constraintStart_toStartOf="@+id/btn_fashion"
+        app:layout_constraintTop_toBottomOf="@+id/btn_fashion"
+        tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
+
+    <ImageButton
+        android:id="@+id/btn_space"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/space_icon"
+        app:layout_constraintEnd_toEndOf="@+id/btn_food"
+        app:layout_constraintStart_toStartOf="@+id/btn_food"
+        app:layout_constraintTop_toBottomOf="@+id/btn_food"
+        tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
+
+    <ImageButton
+        android:id="@+id/btn_games"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/game_icon"
+        app:layout_constraintEnd_toEndOf="@+id/btn_scince"
+        app:layout_constraintStart_toStartOf="@+id/btn_scince"
+        app:layout_constraintTop_toBottomOf="@+id/btn_scince"
+        tools:ignore="SpeakableTextPresentCheck"
+        android:contentDescription="TODO" />
+
+    <ImageButton
+        android:id="@+id/btn_nature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/neture_icon"
+        app:layout_constraintEnd_toEndOf="@+id/btn_space"
+        app:layout_constraintStart_toStartOf="@+id/btn_space"
+        app:layout_constraintTop_toBottomOf="@+id/btn_space"
+        tools:ignore="SpeakableTextPresentCheck"
+        android:contentDescription="@string/todo" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
