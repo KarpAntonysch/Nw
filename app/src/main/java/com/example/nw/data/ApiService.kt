@@ -2,10 +2,13 @@ package com.example.nw.data
 
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface ApiService {
-    @GET("{category}")
+    @GET("api/")
     suspend fun getCategory(
-        @Path("category") category: String
+        @Query("key") key:String,
+        @Query("q") q:String,
+        @Query("image_type") image_type:String
     ):RetrofitModel
 }

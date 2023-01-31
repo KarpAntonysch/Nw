@@ -25,85 +25,14 @@ class MainFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         getFoodPictures()
-        getSpacePictures()
-        getSciencePictures()
-        getCarsPictures()
-        getAnimalsPictures()
-        getFashionPictures()
-        getNaturePictures()
-        getGamePictures()
+
     }
 
     private fun getFoodPictures() {
         binding.btnFood.setOnClickListener {
-            viewModel.getPathCategory("api/?key=33106230-b104905cd7ff74ed17e2229af&q=fastfood&image_type=photo")
-            Log.d("MyLog", "Retrofit: ${
-                viewModel.getPathCategory("api/?key=33106230-b104905cd7ff74ed17e2229af&q=fastfood&image_type=photo")
-            }")
+            viewModel.getPathCategory("33106230-b104905cd7ff74ed17e2229af","fastfood","photo")
             findNavController().navigate(R.id.action_mainFragment_to_imageFragment)
         }
     }
-    private fun getCarsPictures() {
-        binding.btnCars.setOnClickListener {
-            viewModel.getPathCategory("api/?key=33106230-b104905cd7ff74ed17e2229af&q=cars&image_type=photo")
-            Log.d("MyLog", "Retrofit: ${
-                viewModel.getPathCategory("api/?key=33106230-b104905cd7ff74ed17e2229af&q=cars&image_type=photo")
-            }")
-            findNavController().navigate(R.id.action_mainFragment_to_imageFragment)
-        }
-    }
-    private fun getFashionPictures() {
-        binding.btnFashion.setOnClickListener {
-            viewModel.getPathCategory("api/?key=33106230-b104905cd7ff74ed17e2229af&q=fashion&image_type=photo")
-            Log.d("MyLog", "Retrofit: ${
-                viewModel.getPathCategory("api/?key=33106230-b104905cd7ff74ed17e2229af&q=fashion&image_type=photo")
-            }")
-            findNavController().navigate(R.id.action_mainFragment_to_imageFragment)
-        }
-    }
-    private fun getAnimalsPictures() {
-        binding.btnAnimals.setOnClickListener {
-            viewModel.getPathCategory("api/?key=33106230-b104905cd7ff74ed17e2229af&q=animals&image_type=photo")
-            Log.d("MyLog", "Retrofit: ${
-                viewModel.getPathCategory("api/?key=33106230-b104905cd7ff74ed17e2229af&q=animals&image_type=photo")
-            }")
-            findNavController().navigate(R.id.action_mainFragment_to_imageFragment)
-        }
-    }
-    private fun getGamePictures() {
-        binding.btnGames.setOnClickListener {
-            viewModel.getPathCategory("api/?key=33106230-b104905cd7ff74ed17e2229af&q=games&image_type=photo")
-            Log.d("MyLog", "Retrofit: ${
-                viewModel.getPathCategory("api/?key=33106230-b104905cd7ff74ed17e2229af&q=games&image_type=photo")
-            }")
-            findNavController().navigate(R.id.action_mainFragment_to_imageFragment)
-        }
-    }
-    private fun getNaturePictures() {
-        binding.btnNature.setOnClickListener {
-            viewModel.getPathCategory("api/?key=33106230-b104905cd7ff74ed17e2229af&q=nature&image_type=photo")
-            Log.d("MyLog", "Retrofit: ${
-                viewModel.getPathCategory("api/?key=33106230-b104905cd7ff74ed17e2229af&q=nature&image_type=photo")
-            }")
-            findNavController().navigate(R.id.action_mainFragment_to_imageFragment)
-        }
-    }
-    private fun getSciencePictures() {
-        binding.btnScince.setOnClickListener {
-            viewModel.getPathCategory("api/?key=33106230-b104905cd7ff74ed17e2229af&q=science&image_type=photo")
-            Log.d("MyLog", "Retrofit: ${
-                viewModel.getPathCategory("api/?key=33106230-b104905cd7ff74ed17e2229af&q=science&image_type=photo")
-            }")
-            findNavController().navigate(R.id.action_mainFragment_to_imageFragment)
-        }
-    }
-    private fun getSpacePictures() {
-        binding.btnSpace.setOnClickListener {
-            viewModel.getPathCategory("api/?key=33106230-b104905cd7ff74ed17e2229af&q=space&image_type=photo")
-            Log.d("MyLog", "Retrofit: ${
-                viewModel.getPathCategory("api/?key=33106230-b104905cd7ff74ed17e2229af&q=space&image_type=photo")
-            }")
-            findNavController().navigate(R.id.action_mainFragment_to_imageFragment)
-        }
-    }
+
 }
