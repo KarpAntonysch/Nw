@@ -10,10 +10,10 @@ class MainFragmentViewModel : ViewModel() {
 
     private val retrofitRepository = RetrofitRepository()
 
-    fun getPathCategory(key:String,q:String,image_type:String) {
+    fun getPathCategory(q:String,image_type:String) {
         viewModelScope.launch {
-            retrofitRepository.getCategory(key, q, image_type)
-            Log.d("MyLog","VM:${retrofitRepository.getCategory(key,q, image_type)}")
+            retrofitRepository.getCategory( q, image_type)
+            Log.d("MyLog","VM:${retrofitRepository.getCategory(q, image_type)}")
         }
     }
 }

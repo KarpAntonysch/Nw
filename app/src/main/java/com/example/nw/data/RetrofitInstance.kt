@@ -7,25 +7,23 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.create
 
 object RetrofitInstance {
+    private const val BASE_URL = "33106230-b104905cd7ff74ed17e2229af"
 
-    val api_interceptor = Interceptor {
-        val originalRequest = it.request()
-        val newHttpUrl = originalRequest.url.newBuilder()
-            .addQueryParameter("app_key", "?key=33106230-b104905cd7ff74ed17e2229af")
-            .build()
-        val newRequest = originalRequest.newBuilder()
-            .url(newHttpUrl)
-            .build()
-        it.proceed(newRequest)
-    }
-
-    val clientHTTP = OkHttpClient().newBuilder()
-        .addNetworkInterceptor(api_interceptor)
+    private val clientHTTP = OkHttpClient.Builder()
+        .addInterceptor { chain ->
+            val url = chain
+                .request()
+                .url
+                .newBuilder()
+                .addQueryParameter("key", BASE_URL)
+                .build()
+            chain.proceed(chain.request().newBuilder().url(url).build())
+        }
         .build()
 
     private val retrofit by lazy {
         Retrofit.Builder()
-            //.client(clientHTTP)
+            .client(clientHTTP)
             .baseUrl("https://pixabay.com/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()

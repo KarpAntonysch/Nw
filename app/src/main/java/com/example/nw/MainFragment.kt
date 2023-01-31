@@ -30,7 +30,7 @@ class MainFragment : Fragment() {
 
     private fun getFoodPictures() {
         binding.btnFood.setOnClickListener {
-            viewModel.getPathCategory("33106230-b104905cd7ff74ed17e2229af","fastfood","photo")
+            viewModel.getPathCategory("fastfood","photo")
             findNavController().navigate(R.id.action_mainFragment_to_imageFragment)
         }
     }

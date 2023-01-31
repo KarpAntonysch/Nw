@@ -5,10 +5,16 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface ApiService {
-    @GET("api/")
+        @GET("api/")
+        suspend fun getCategory(
+            @Query("q") q:String,
+            @Query("image_type") image_type:String
+        ):RetrofitModel
+    }
+
+/*Первый вариант через query и с открытым ключом
+@GET("api/")
     suspend fun getCategory(
         @Query("key") key:String,
         @Query("q") q:String,
-        @Query("image_type") image_type:String
-    ):RetrofitModel
-}
+        @Query("image_type") image_type:String*/
