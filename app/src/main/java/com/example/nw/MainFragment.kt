@@ -6,8 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.example.nw.data.Hit
 import com.example.nw.databinding.FragmentMainBinding
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 
 class MainFragment : Fragment() {
@@ -23,16 +27,35 @@ class MainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        getFoodPictures()
-
+        getPicturesByCategory(binding.btnAnimals, "animals")
+        getPicturesByCategory(binding.btnCars, "cars")
+        getPicturesByCategory(binding.btnFashion, "fashion")
+        getPicturesByCategory(binding.btnFood, "food")
+        getPicturesByCategory(binding.btnScince, "science")
+        getPicturesByCategory(binding.btnSpace, "space")
+        getPicturesByCategory(binding.btnGames, "games")
+        getPicturesByCategory(binding.btnNature, "nature")
     }
 
-    private fun getFoodPictures() {
-        binding.btnFood.setOnClickListener {
-            viewModel.getPathCategory("fastfood","photo")
-            findNavController().navigate(R.id.action_mainFragment_to_imageFragment)
+    private fun getPicturesByCategory(d: View, q: String) {
+        d.setOnClickListener {
+            getPictures(q)
         }
     }
 
+
+    private fun getPictures(q: String) {
+        viewModel.getPathCategory(q).observe(viewLifecycleOwner) {
+            Log.d("MyLog", "VM1:${it}}")
+            val bundleForImageFragment = Bundle()
+            val bundleHits: ArrayList<Hit?> = ArrayList(it.hits!!)
+            bundleForImageFragment.putParcelableArrayList("ArgForImageFrag: com.example.nw.data.Hit",
+                bundleHits)
+            lifecycleScope.launch {
+                delay(1000)// что бы успел отработать postValue в фоновом потоке
+                findNavController().navigate(R.id.action_mainFragment_to_imageFragment,
+                    bundleForImageFragment)
+            }
+        }
+    }
 }

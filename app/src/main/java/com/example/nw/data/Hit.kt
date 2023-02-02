@@ -1,5 +1,9 @@
 package com.example.nw.data
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class Hit(
     val collections: Int?,
     val comments: Int?,
@@ -23,4 +27,4 @@ data class Hit(
     val webformatHeight: Int?,
     val webformatURL: String?,
     val webformatWidth: Int?
-)
+) : Parcelable

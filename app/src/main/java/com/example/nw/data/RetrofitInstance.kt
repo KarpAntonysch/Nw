@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.create
 
 object RetrofitInstance {
-    private const val BASE_URL = "33106230-b104905cd7ff74ed17e2229af"
+    private const val KEY = "33106230-b104905cd7ff74ed17e2229af"
 
     private val clientHTTP = OkHttpClient.Builder()
         .addInterceptor { chain ->
@@ -15,7 +15,7 @@ object RetrofitInstance {
                 .request()
                 .url
                 .newBuilder()
-                .addQueryParameter("key", BASE_URL)
+                .addQueryParameter("key", KEY)
                 .build()
             chain.proceed(chain.request().newBuilder().url(url).build())
         }

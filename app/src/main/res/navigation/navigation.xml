@@ -18,5 +18,9 @@
         android:id="@+id/imageFragment"
         android:name="com.example.nw.ImageFragment"
         android:label="fragment_image"
-        tools:layout="@layout/fragment_image" />
+        tools:layout="@layout/fragment_image" >
+        <argument
+            android:name="ArgForImageFrag"
+            app:argType="com.example.nw.data.Hit" />
+    </fragment>
 </navigation>
