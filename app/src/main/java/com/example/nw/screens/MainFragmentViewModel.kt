@@ -1,4 +1,4 @@
-package com.example.nw
+package com.example.nw.screens
 
 import android.util.Log
 import androidx.lifecycle.LiveData

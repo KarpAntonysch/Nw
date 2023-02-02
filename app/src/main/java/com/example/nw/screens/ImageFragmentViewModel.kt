@@ -1,4 +1,4 @@
-package com.example.nw
+package com.example.nw.screens
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

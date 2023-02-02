@@ -1,4 +1,4 @@
-package com.example.nw
+package com.example.nw.screens
 
 import android.os.Bundle
 import android.util.Log
@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.example.nw.R
 import com.example.nw.data.Hit
 import com.example.nw.databinding.FragmentMainBinding
 import kotlinx.coroutines.delay
@@ -32,8 +33,8 @@ class MainFragment : Fragment() {
         getPicturesByCategory(binding.btnFashion, "fashion")
         getPicturesByCategory(binding.btnFood, "food")
         getPicturesByCategory(binding.btnScince, "science")
-        getPicturesByCategory(binding.btnSpace, "space")
-        getPicturesByCategory(binding.btnGames, "games")
+        getPicturesByCategory(binding.btnSpace, "space+sky")
+        getPicturesByCategory(binding.btnGames, "pc+games")
         getPicturesByCategory(binding.btnNature, "nature")
     }
 
