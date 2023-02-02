@@ -22,5 +22,13 @@
         <argument
             android:name="ArgForImageFrag"
             app:argType="com.example.nw.data.Hit" />
+        <action
+            android:id="@+id/action_imageFragment_to_fullScreenFragment"
+            app:destination="@id/fullScreenFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/fullScreenFragment"
+        android:name="com.example.nw.screens.FullScreenFragment"
+        android:label="fragment_full_screen"
+        tools:layout="@layout/fragment_full_screen" />
 </navigation>

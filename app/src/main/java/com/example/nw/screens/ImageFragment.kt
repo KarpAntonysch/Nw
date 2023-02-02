@@ -1,24 +1,21 @@
 package com.example.nw.screens
 
-import android.net.Uri
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import com.bumptech.glide.Glide
+import com.example.nw.R
 import com.example.nw.RecyclerViewAdapter
 import com.example.nw.data.Hit
 import com.example.nw.databinding.FragmentImageBinding
 
-class ImageFragment : Fragment() {
+class ImageFragment : Fragment(),AdapterCallBack {
     private lateinit var binding: FragmentImageBinding
-    val viewModel = ImageFragmentViewModel()
-    private val adapter = RecyclerViewAdapter()
+    private val adapter = RecyclerViewAdapter(this)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,7 +27,6 @@ class ImageFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        //showImage(gettingHitsFromMF()?.get(1)?.webformatURL.toString())
         realizationOfRV()
 
     }
@@ -52,4 +48,9 @@ class ImageFragment : Fragment() {
             arguments?.getParcelableArrayList("ArgForImageFrag: com.example.nw.data.Hit")
         }
     }
+
+    override fun onClickToWallPaper(picture: Hit) {
+        findNavController().navigate(R.id.action_imageFragment_to_fullScreenFragment)
+    }
+
 }

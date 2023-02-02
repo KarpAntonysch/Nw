@@ -10,13 +10,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.nw.data.Hit
 import com.example.nw.databinding.PictureItemBinding
+import com.example.nw.screens.AdapterCallBack
 
-class RecyclerViewAdapter :
+class RecyclerViewAdapter(val callBack: AdapterCallBack) :
     ListAdapter<Hit, RecyclerViewAdapter.PictureViewHolder>(BankingComparator()) {
 
     class PictureViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         private val binding = PictureItemBinding.bind(view)
-        fun bind(picture: Hit) = with(binding) {
+        fun bind(picture: Hit,callBack: AdapterCallBack) = with(binding) {
             // использую контекст из кнопки
             Glide
                 .with(imageButton.context)
@@ -24,6 +25,9 @@ class RecyclerViewAdapter :
                 .centerCrop()
                 .placeholder(R.drawable.ic_loading)
                 .into(binding.imageButton)
+            binding.imageButton.setOnClickListener {
+                callBack.onClickToWallPaper(picture)
+            }
         }
     }
 
@@ -34,7 +38,7 @@ class RecyclerViewAdapter :
 
     override fun onBindViewHolder(holder: PictureViewHolder, position: Int) {
         val currentPicture = getItem(position)
-        holder.bind(currentPicture)
+        holder.bind(currentPicture,callBack)
     }
 
     class BankingComparator : DiffUtil.ItemCallback<Hit>() {
@@ -46,6 +50,4 @@ class RecyclerViewAdapter :
             return oldItem == newItem
         }
     }
-
-
 }
