@@ -9,11 +9,12 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.nw.R
-import com.example.nw.RecyclerViewAdapter
+import com.example.nw.adapter.RecyclerViewAdapter
+import com.example.nw.adapter.AdapterCallBack
 import com.example.nw.data.Hit
 import com.example.nw.databinding.FragmentImageBinding
 
-class ImageFragment : Fragment(),AdapterCallBack {
+class ImageFragment : Fragment(), AdapterCallBack {
     private lateinit var binding: FragmentImageBinding
     private val adapter = RecyclerViewAdapter(this)
 
@@ -50,7 +51,9 @@ class ImageFragment : Fragment(),AdapterCallBack {
     }
 
     override fun onClickToWallPaper(picture: Hit) {
-        findNavController().navigate(R.id.action_imageFragment_to_fullScreenFragment)
+        val pictureUrlBundle = Bundle()
+        pictureUrlBundle.putString("ArgForWallPaper: string",picture.webformatURL)
+        findNavController().navigate(R.id.action_imageFragment_to_fullScreenFragment,pictureUrlBundle)
     }
 
 }

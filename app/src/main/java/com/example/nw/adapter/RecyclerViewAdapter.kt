@@ -1,4 +1,4 @@
-package com.example.nw
+package com.example.nw.adapter
 
 
 import android.view.LayoutInflater
@@ -8,9 +8,9 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.nw.R
 import com.example.nw.data.Hit
 import com.example.nw.databinding.PictureItemBinding
-import com.example.nw.screens.AdapterCallBack
 
 class RecyclerViewAdapter(val callBack: AdapterCallBack) :
     ListAdapter<Hit, RecyclerViewAdapter.PictureViewHolder>(BankingComparator()) {
