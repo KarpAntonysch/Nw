@@ -2,10 +2,12 @@ package com.example.nw.screens
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.SurfaceControl.Transaction
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.nw.databinding.FragmentFullScreenBinding
+import kotlinx.coroutines.delay
 
 
 class FullScreenFragment : Fragment() {
@@ -26,9 +28,9 @@ class FullScreenFragment : Fragment() {
         fullScreenViewModel.showWallPaper(requireContext(),
             getWallPaperPicture(),
             binding.imageView)
-
-        fullScreenViewModel.setWallPaper(requireContext(), getWallPaperPicture())
-
+        binding.button2.setOnClickListener {
+            fullScreenViewModel.setWallPaper(requireContext(), getWallPaperPicture(),activity?.supportFragmentManager)
+        }
     }
 
 
