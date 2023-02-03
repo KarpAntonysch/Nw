@@ -6,4 +6,7 @@
     <string name="wall_paper">Установить обои</string>
     <string name="setWallpaper">Обои установлены</string>
     <string name="warning">Ошибка загрузки</string>
+    <string name="attention">Внимание!</string>
+    <string name="ok">OK</string>
+    <string name="vpn">Проверьте, что включен VPN, иначе могут возникунть проблемы с доступом к коллекции изображений.</string>
 </resources>

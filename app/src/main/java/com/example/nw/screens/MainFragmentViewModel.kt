@@ -13,7 +13,7 @@ import kotlinx.coroutines.launch
 class MainFragmentViewModel : ViewModel() {
 
     private val retrofitRepository = RetrofitRepository()
-
+    var flag = MutableLiveData<Int>(0)
 
     fun getPathCategory(q:String):LiveData<RetrofitModel> {
         val hitList = MutableLiveData<RetrofitModel>()

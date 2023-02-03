@@ -11,7 +11,8 @@ class MainActivityViewModel:ViewModel() {
 
     fun d(){
         viewModelScope.launch {
-            delay(5000L)
+            // можно управлять задержкой или прописывать фоновые процессы, сплэш скрин будет виден до выполнения всех процессов
+            delay(1000L)
             isLoading.value = false
         }
     }
