@@ -1,10 +1,8 @@
 package com.example.nw.data
 
-import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
 
 object RetrofitInstance {
     private const val KEY = "33106230-b104905cd7ff74ed17e2229af"

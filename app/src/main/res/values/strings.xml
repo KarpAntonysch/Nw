@@ -18,5 +18,9 @@
     <string name="connect">Подключение к интернету восстановлено</string>
     <string name="disconnect">Нет подключения к интернету</string>
     <string name="ok">OK</string>
-    <string name="vpn">Проверьте, что включен VPN, иначе могут возникунть проблемы с доступом к коллекции изображений.</string>
+    <string name="internet">Нет подключения к интернету, проверьте соединение!</string>
+    <string name="vpn">Ошибка запроса. Cменитe свой ip.</string>
+    <string name="http400">Неверный запрос</string>
+    <string name="http404">Ресурс не найден</string>
+    <string name="incorrect_request">Неправильный запрос</string>
 </resources>

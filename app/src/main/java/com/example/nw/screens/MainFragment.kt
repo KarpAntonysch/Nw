@@ -47,22 +47,26 @@ class MainFragment : Fragment(),DialogInterface {
             if (viewModel.internetChecking(requireContext())){
                 getPictures(q)
             }else{
-                Toast.makeText(context,R.string.disconnect, Toast.LENGTH_SHORT).show()
+                showDialog(R.string.attention,R.string.internet,R.string.ok,childFragmentManager)
             }
         }
     }
 
 
     private fun getPictures(q: String) {
-        viewModel.getPathCategory(q).observe(viewLifecycleOwner) {
+        viewModel.getPathCategory(requireContext(),q).observe(viewLifecycleOwner) {
             val bundleForImageFragment = Bundle()
-            val bundleHits: ArrayList<Hit?> = ArrayList(it.hits!!)
+            val bundleHits: ArrayList<Hit> = ArrayList(it.hits)
             bundleForImageFragment.putParcelableArrayList("ArgForImageFrag: com.example.nw.data.Hit",
                 bundleHits)
-            lifecycleScope.launch {
-                delay(1000)// что бы успел отработать postValue в фоновом потоке
-                findNavController().navigate(R.id.action_mainFragment_to_imageFragment,
-                    bundleForImageFragment)
+            if (bundleHits.isNullOrEmpty()){
+                Toast.makeText(context, R.string.incorrect_request, Toast.LENGTH_SHORT).show()
+            }else{
+                lifecycleScope.launch {
+                    delay(1000)// что бы успел отработать postValue в фоновом потоке
+                    findNavController().navigate(R.id.action_mainFragment_to_imageFragment,
+                        bundleForImageFragment)
+                }
             }
         }
     }
