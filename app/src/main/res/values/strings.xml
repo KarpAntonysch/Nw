@@ -4,4 +4,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="todo">TODO</string>
     <string name="wall_paper">Установить обои</string>
+    <string name="setWallpaper">Обои установлены</string>
+    <string name="warning">Ошибка загрузки</string>
 </resources>
