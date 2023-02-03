@@ -23,4 +23,6 @@
     <string name="http400">Неверный запрос</string>
     <string name="http404">Ресурс не найден</string>
     <string name="incorrect_request">Неправильный запрос</string>
+    <string name="category">Категории</string>
+    <string name="back">Назад</string>
 </resources>

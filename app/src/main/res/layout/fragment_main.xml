@@ -6,12 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".screens.MainFragment">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/mainToolBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageButton
         android:id="@+id/btn_animals"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:contentDescription="TODO"
         android:src="@drawable/animal_icon"
@@ -19,7 +30,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mainToolBar"
         app:layout_constraintVertical_bias="0.0"
         tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
 
@@ -123,7 +134,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_animals" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tvCar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="3dp"
@@ -134,7 +145,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_cars" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/tvFashion"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="3dp"
@@ -145,7 +156,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_fashion" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/tvFood"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="3dp"
@@ -156,7 +167,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_food" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/tvScience"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="3dp"
@@ -167,7 +178,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_scince" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/tvSpace"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="3dp"
@@ -178,7 +189,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_space" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/tvGames"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="3dp"
@@ -189,7 +200,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_games" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/tvNature"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="3dp"

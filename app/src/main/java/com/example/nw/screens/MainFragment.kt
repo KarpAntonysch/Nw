@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
@@ -30,6 +31,7 @@ class MainFragment : Fragment(),DialogInterface {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        toolbarSettings()
         super.onViewCreated(view, savedInstanceState)
         getPicturesByCategory(binding.btnAnimals, "animals")
         getPicturesByCategory(binding.btnCars, "cars")
@@ -69,5 +71,11 @@ class MainFragment : Fragment(),DialogInterface {
                 }
             }
         }
+    }
+
+    private fun toolbarSettings(){
+        val toolbar=binding.mainToolBar
+        (activity as AppCompatActivity).setSupportActionBar(toolbar)
+        (activity as AppCompatActivity).supportActionBar?.title = requireActivity().getString(R.string.category)
     }
 }

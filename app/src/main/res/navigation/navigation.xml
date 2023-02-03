@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_imageFragment_to_fullScreenFragment"
             app:destination="@id/fullScreenFragment" />
+        <action
+            android:id="@+id/action_imageFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
     </fragment>
     <fragment
         android:id="@+id/fullScreenFragment"
