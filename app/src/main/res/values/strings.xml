@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Nw</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="todo">TODO</string>
     <string name="animals">животные</string>
@@ -19,7 +18,7 @@
     <string name="disconnect">Нет подключения к интернету</string>
     <string name="ok">OK</string>
     <string name="internet">Нет подключения к интернету, проверьте соединение!</string>
-    <string name="vpn">Ошибка запроса. Cменитe свой ip.</string>
+    <string name="vpn">Ошибка запроса. Используйте VPN.</string>
     <string name="http400">Неверный запрос</string>
     <string name="http404">Ресурс не найден</string>
     <string name="incorrect_request">Неправильный запрос</string>
