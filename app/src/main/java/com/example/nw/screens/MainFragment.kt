@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
@@ -30,7 +31,6 @@ class MainFragment : Fragment(),DialogInterface {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        dialogCheck()
         getPicturesByCategory(binding.btnAnimals, "animals")
         getPicturesByCategory(binding.btnCars, "cars")
         getPicturesByCategory(binding.btnFashion, "fashion")
@@ -41,22 +41,20 @@ class MainFragment : Fragment(),DialogInterface {
         getPicturesByCategory(binding.btnNature, "nature")
     }
 
-    private fun dialogCheck(){
-        if (viewModel.flag.value == 0){
-            showDialog(R.string.attention,R.string.vpn,R.string.ok,childFragmentManager)
-            viewModel.flag.value = 1
-        }
-    }
+
     private fun getPicturesByCategory(view: View, q: String) {
         view.setOnClickListener {
-            getPictures(q)
+            if (viewModel.internetChecking(requireContext())){
+                getPictures(q)
+            }else{
+                Toast.makeText(context,R.string.disconnect, Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
 
     private fun getPictures(q: String) {
         viewModel.getPathCategory(q).observe(viewLifecycleOwner) {
-            Log.d("MyLog", "VM1:${it}}")
             val bundleForImageFragment = Bundle()
             val bundleHits: ArrayList<Hit?> = ArrayList(it.hits!!)
             bundleForImageFragment.putParcelableArrayList("ArgForImageFrag: com.example.nw.data.Hit",

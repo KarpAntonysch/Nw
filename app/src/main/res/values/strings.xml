@@ -3,10 +3,20 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="todo">TODO</string>
+    <string name="animals">животные</string>
+    <string name="space">космос</string>
+    <string name="cars">машины</string>
+    <string name="nature">природа</string>
+    <string name="fashion">мода</string>
+    <string name="games">игры</string>
+    <string name="science">наука</string>
+    <string name="food">еда</string>
     <string name="wall_paper">Установить обои</string>
     <string name="setWallpaper">Обои установлены</string>
     <string name="warning">Ошибка загрузки</string>
     <string name="attention">Внимание!</string>
+    <string name="connect">Подключение к интернету восстановлено</string>
+    <string name="disconnect">Нет подключения к интернету</string>
     <string name="ok">OK</string>
     <string name="vpn">Проверьте, что включен VPN, иначе могут возникунть проблемы с доступом к коллекции изображений.</string>
 </resources>

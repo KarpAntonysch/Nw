@@ -6,10 +6,10 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-class MainActivityViewModel:ViewModel() {
-     var isLoading = MutableLiveData<Boolean>(true)
+class MainActivityViewModel : ViewModel() {
+    var isLoading = MutableLiveData<Boolean>(true)
 
-    fun d(){
+    fun splashDelay() {
         viewModelScope.launch {
             // можно управлять задержкой или прописывать фоновые процессы, сплэш скрин будет виден до выполнения всех процессов
             delay(1000L)
