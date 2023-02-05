@@ -47,6 +47,8 @@ class MainFragmentViewModel : ViewModel() {
                 if (e.code() == 404) {
                     Toast.makeText(context, R.string.http400, Toast.LENGTH_SHORT).show()
                 }
+            } catch (e: javax.net.ssl.SSLException) {
+                Toast.makeText(context, R.string.ssl, Toast.LENGTH_SHORT).show()
             }
         }
         return hitList

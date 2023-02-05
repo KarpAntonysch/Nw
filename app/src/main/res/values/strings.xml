@@ -24,4 +24,5 @@
     <string name="incorrect_request">Неправильный запрос</string>
     <string name="category">Категории</string>
     <string name="back">Назад</string>
+    <string name="ssl">Ошибка SSL.</string>
 </resources>
